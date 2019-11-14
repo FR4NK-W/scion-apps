@@ -1,5 +1,6 @@
 // Copyright 2017 ETH Zurich
 // Copyright 2018 ETH Zurich, Anapaya Systems
+// Copyright 2019 ETH Zurich
 //
 // Licensed under the Apache License, Version 2.0 (the "License");
 // you may not use this file except in compliance with the License.
@@ -383,7 +384,7 @@ type server struct {
 // On any error, the server exits.
 func (s server) run() {
 	// Listen on SCION address
-	qsock, err := mpsquic.ListenSCIONTransport(nil, &local, nil)
+	qsock, err := mpsquic.ListenSCION(nil, &local, nil)
 	if err != nil {
 		LogFatal("Unable to listen", "err", err)
 	}
